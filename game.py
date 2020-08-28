@@ -1,5 +1,6 @@
 import turtle
 
+# screen setting
 wn = turtle.Screen()
 wn.title("Pong")
 wn.bgcolor("black")
@@ -25,7 +26,12 @@ paddle_b.penup()
 paddle_b.goto(350, 0)
 
 # Ball
-
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("circle")
+ball.color("white")
+ball.penup()
+ball.goto(0, 0)
 
 while True:
     wn.update()
