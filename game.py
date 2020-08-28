@@ -2,7 +2,7 @@ import turtle
 
 # screen setting
 wn = turtle.Screen()
-wn.title("Pong")
+wn.title("PONG")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0)
@@ -32,6 +32,42 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 2
+ball.dy = 2
 
+
+# Function
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
+
+# keyboard binding
+wn.listen()
+wn.onkeypress(paddle_a_up, "w")
+wn.onkeypress(paddle_a_down, "s")
+wn.onkeypress(paddle_b_up, "Up")
+wn.onkeypress(paddle_b_down, "Down")
+
+# main game loop
 while True:
     wn.update()
